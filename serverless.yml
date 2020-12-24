@@ -1,0 +1,26 @@
+service: sleep-calculator
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  stage: dev
+  region: eu-west-1
+
+functions:
+  server:
+    name: sleep-calculator-lambda
+    handler: ./dist/handler.handler
+    memorySize: 256
+    timeout: 2
+    events:
+      - http: GET /
+
+package:
+  include:
+    - node_modules/tslib
+  exclude:
+    - .*
+    - .github/**
+    - .vscode/**
+    - server/**
+    - package-lock.json
