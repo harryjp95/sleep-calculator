@@ -16,7 +16,7 @@ const wakeUpTimes = [1, 2, 3, 4, 5, 6].map((i) => {
 const App: React.FC = () => {
   return (
     <div className='main'>
-      <p>Fall asleep now and you should wake up at one of the following times:</p>
+      <p className='title'>Fall asleep now and you should set your alarm for one of:</p>
       <div className='wake-up-times'>
         {wakeUpTimes}
       </div>

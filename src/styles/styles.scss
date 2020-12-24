@@ -1,6 +1,6 @@
 html {
   height: 100%;
-  font: 25px arial, helvetica, sans-serif;
+  font: 31px arial, helvetica, sans-serif;
 }
 
 body {
@@ -23,6 +23,11 @@ div {
 .main {
   flex-direction: column;
   flex-wrap: wrap;
+}
+
+.title {
+  padding: 8px;
+  margin: 8px;
 }
 
 .wake-up-times {
