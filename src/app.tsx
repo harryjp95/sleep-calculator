@@ -10,7 +10,9 @@ const time = (ms: number) => {
 
 const wakeUpTimes = [1, 2, 3, 4, 5, 6].map((i) => {
   const ninetyMinutes = 90 * 60 * 1000
-  return <p className='wake-up-time'>{time(timeNow + timeToSleep + (i * ninetyMinutes))}</p>
+  const className = i < 4 ? 'wake-up-time-not-preferred' : 'wake-up-time-preferred'
+
+  return <p className={className}>{time(timeNow + timeToSleep + (i * ninetyMinutes))}</p>
 })
 
 const App: React.FC = () => {
@@ -18,7 +20,10 @@ const App: React.FC = () => {
     <div className='main'>
       <p className='title'>Fall asleep now and you should set your alarm for one of:</p>
       <div className='wake-up-times'>
-        {wakeUpTimes}
+        {wakeUpTimes.slice(0, 3)}
+      </div>
+      <div className='wake-up-times'>
+        {wakeUpTimes.slice(3, 6)}
       </div>
     </div>
   )

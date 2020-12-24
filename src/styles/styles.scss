@@ -1,6 +1,5 @@
 html {
   height: 100%;
-  font: 31px arial, helvetica, sans-serif;
 }
 
 body {
@@ -26,25 +25,42 @@ div {
 }
 
 .title {
+  font: 32px arial, helvetica, sans-serif;
   padding: 8px;
   margin: 8px;
 }
 
 .wake-up-times {
+  font: 46px arial, helvetica, sans-serif;
   justify-content: center;
   flex-direction: row;
 }
 
 .wake-up-time {
   background-color: white;
-  padding: 8px;
-  margin: 8px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 18px;
+  padding-right: 18px;
+  margin: 12px;
   border: 1px solid #bbb;
   border-radius: 2px;
-  &:nth-child(5) {
-    background-color: lightcoral;
+  &-not-preferred {
+    @extend .wake-up-time;
+    &:nth-child(1) {
+      background-color: #FF0000;
+    }
+    &:nth-child(2) {
+      background-color: #D52B00;
+    }
   }
-  &:nth-child(6) {
-    background-color: lightcoral;
+  &-preferred {
+    @extend .wake-up-time;
+    &:nth-child(2) {
+      background-color: #047F00
+    }
+    &:nth-child(3) {
+      background-color: #059900;
+    }
   }
 }
