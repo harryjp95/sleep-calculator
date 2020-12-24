@@ -12,10 +12,11 @@ functions:
     handler: ./dist/handler.handler
     memorySize: 256
     timeout: 2
-    - http:
-        path: /
-        method: GET
-        private: false
+    events:
+      - http:
+          path: /
+          method: GET
+          private: false
 
 package:
   include:
